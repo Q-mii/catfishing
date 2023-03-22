@@ -109,11 +109,12 @@ function FishingArea:update()
   if self.state == "fishing" and self.fish.ticks >= global_data_table.gauge_data.req_tension_ticks then  
     if self.fish then 
       if self.fish.rarity <= 2 then 
+        music(-1)
         sfx(33)
       elseif self.fish.rarity == 3 then 
-        sfx(29)
+        music(29)
       elseif self.fish.rarity > 3 then 
-        sfx(27)
+        music(27)
       end
     end
     self.state = "detail" 
